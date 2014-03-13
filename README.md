@@ -13,3 +13,5 @@ Example:
     # on the browser: http://127.0.0.1:6789/web_server.py
 
 Fell free to test this by adding images / other types of files to the folder where your server is being ran and then requesting it through the browser.
+
+Note: I've tried to keep all three implementations the same, but the Python implementation (my most recent) has one extra feature that it displays a list of files if no filenames are given in the browser.
