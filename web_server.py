@@ -37,8 +37,14 @@ class WebServer:
     # listen for TCP requests, starting a new thread to process each request
     ###########################################################################
     def run(self):
-        while 1:
-            thread.start_new_thread(self.process_request, self.s.accept())
+        try:
+            while 1:
+                thread.start_new_thread(self.process_request, self.s.accept())
+
+        # catching the ^C exception allows the program to close normally (the
+        # destructor will be called)
+        except KeyboardInterrupt:
+            print ""
 
     ###########################################################################
     # reads from the client socket data, processes the GET request and sends
